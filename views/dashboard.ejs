@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dashboard</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #4CAF50;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    h2 {
+      color: #111010;
+      margin-top: 20px;
+      background-color: rgb(115, 208, 214);
+    }
+    .section {
+      margin: 20px;
+    }
+    .card-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .card {
+      background: #a9abd4;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      flex: 1 1 200px;
+      max-width: 250px;
+    }
+    .card img {
+      width: 100%;
+      height: auto;
+      border-radius: 5px;
+      margin-top: 5px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Dashboard</h1>
+  <p>Logged in as: <b><%= role %></b></p>
+</header>
+
+<div class="section">
+  <h2>Posts</h2>
+  <div class="card-container">
+    <% posts.forEach(post => { %>
+      <div class="card">
+        <b><%= post.title %></b>
+        <p><%= post.body %></p>
+      </div>
+    <% }) %>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Users</h2>
+  <div class="card-container">
+    <% users.forEach(user => { %>
+      <div class="card">
+        <b><%= user.name %></b>
+        <p><%= user.email %></p>
+      </div>
+    <% }) %>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Todos</h2>
+  <div class="card-container">
+    <% todos.forEach(todo => { %>
+      <div class="card">
+        <%= todo.title %> – <%= todo.completed ? '✅' : '❌' %>
+      </div>
+    <% }) %>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Albums</h2>
+  <div class="card-container">
+    <% albums.forEach(album => { %>
+      <div class="card">
+        <b><%= album.title %></b>
+      </div>
+    <% }) %>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Photos</h2>
+  <div class="card-container">
+    <% photos.forEach(photo => { %>
+      <div class="card">
+        <b><%= photo.title %></b>
+        <img src="<%= photo.thumbnailUrl %>" alt="<%= photo.title %>">
+      </div>
+    <% }) %>
+  </div>
+</div>
+
+<div class="section">
+  <h2>Comments</h2>
+  <div class="card-container">
+    <% comments.forEach(comment => { %>
+      <div class="card">
+        <b><%= comment.name %></b> (<%= comment.email %>)
+        <p><%= comment.body %></p>
+      </div>
+    <% }) %>
+  </div>
+</div>
+
+</body>
+</html>
