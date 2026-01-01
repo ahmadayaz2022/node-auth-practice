@@ -31,13 +31,13 @@ The project is built only for **learning and practice purposes**.
 ## 📁 Project Structure
 node-auth/
 │
-├── config/ # Database configuration
-├── controllers/ # Business logic (signup, signin)
-├── middleware/ # Auth & role middleware
-├── models/ # Mongoose schemas
-├── routes/ # API routes
-├── .env.example # Environment variables example
-├── app.js # Main app file
+├── config/Database configuration
+├── controllers/Business logic (signup, signin)
+├── middleware/Auth & role middleware
+├── models/Mongoose schemas
+├── routes/API routes
+├── .env.exampleEnvironment variables example
+├── app.js/Main app file
 ├── package.json
 └── README.md
 
